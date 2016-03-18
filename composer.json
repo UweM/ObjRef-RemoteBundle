@@ -1,0 +1,18 @@
+{
+    "name": "UweM/objref-remotebundle",
+    "license": "",
+    "type": "symfony-bundle",
+    "minimum-stability": "dev",
+    "require": {
+        "UweM/ObjRef": "dev-master",
+        "mockery/mockery": "dev-master@dev",
+        "phpunit/phpunit": "^5.2",
+        "phpseclib/phpseclib": "0.3.5"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:UweM/ObjRef.git"
+        }
+    ]
+}

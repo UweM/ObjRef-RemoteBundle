@@ -1,0 +1,27 @@
+
+parameters:
+        objref.proxy_dir:        %kernel.cache_dir%/remote/Proxies
+        objref.proxy_namespace:  ObjRef\RemoteBundle\Proxy
+services:
+    objref.ssh.client:
+        class: ObjRef\RemoteBundle\SSH\Client
+        scope: prototype
+
+    objref.host:
+        class: ObjRef\Host
+        arguments: ["@objref.proxy_manager", "@service_container"]
+        scope: prototype
+
+    objref.proxy_generator:
+        class: ObjRef\Proxy\Generator
+        arguments: [%objref.proxy_dir%, %objref.proxy_namespace%]
+
+    objref.proxy_manager:
+        class: ObjRef\Proxy\Manager
+        arguments: ["@annotation_reader", "@objref.proxy_generator"]
+
+    remote.factory:
+        class: ObjRef\RemoteBundle\Service\Remote\Factory
+
+    remote.file:
+        class: ObjRef\RemoteBundle\Service\Remote\File
