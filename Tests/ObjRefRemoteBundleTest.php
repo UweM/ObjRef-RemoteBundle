@@ -51,6 +51,11 @@ class ObjRefRemoteBundleTest extends \PHPUnit_Framework_TestCase {
             ->with('kernel.environment')
             ->andReturn('prod')
         ;
+        $container
+            ->shouldReceive('getParameter')
+            ->once()
+            ->with('objref.proxy_namespace')
+            ->andReturn('TESTSPACE');
         ;
         return $container;
     }

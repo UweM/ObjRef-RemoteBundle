@@ -13,7 +13,7 @@ class ClientCommandTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testName() {
-        $this->assertEquals('remote:client', $this->command->getName());
+        $this->assertEquals('objref:client', $this->command->getName());
     }
 }
  

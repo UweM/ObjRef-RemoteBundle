@@ -15,7 +15,7 @@ class ClientCommand extends ContainerAwareCommand {
     protected function configure() {
         $this
             ->setName('objref:client')
-            ->setDescription('test')
+            ->setDescription('Client command for ObjRef communication. Do not call manually')
         ;
     }
 
